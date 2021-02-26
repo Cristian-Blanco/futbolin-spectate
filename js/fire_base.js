@@ -36,6 +36,12 @@ refPlayer2.on('value', function(snapshot) {
     gol2()
 });
 
+var restart = firebase.database().ref("info_user/restart");
+refPlayer2.on('value', function(snapshot) {
+    if(snapshot.val() == 1){
+        location.reload()
+    }
+});
 
 function apagar() {
     wait(3000).then(function () {
